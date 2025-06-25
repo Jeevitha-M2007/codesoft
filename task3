@@ -1,0 +1,16 @@
+import random
+import string
+
+try:
+    user_input = int(input("Enter the desired password length:"))
+    if user_input < 4:
+        print("Password too short. Try 4 or more characters.")
+        exit()
+
+    characters = string.ascii_letters + string.digits + string.punctuation
+    password = ''.join(random.choice(characters) for _ in range(user_input))
+
+    print("Your generated password :",password)
+
+except ValueError:
+    print("please enter a valid number.")
